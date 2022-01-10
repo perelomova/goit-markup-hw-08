@@ -1,0 +1,31 @@
+// Variables
+@import "./utils/variables";
+
+// Mixins
+@import "./utils/mixins";
+
+// Base styles
+@import "./base/base-styles";
+
+// Placeholders
+@import "./utils/placeholders";
+
+// Layout
+@import "./layout/header";
+@import "./layout/hero";
+@import "./layout/features";
+@import "./layout/duties";
+@import "./layout/team";
+@import "./layout/clients";
+@import "./layout/footer";
+@import "./layout/footer-form";
+@import "./layout/portfolio";
+
+// Components
+@import "./components/logo";
+@import "./components/site-nav";
+@import "./components/contacts";
+@import "./components/section";
+@import "./components/buttons";
+@import "./components/networks";
+@import "./components/modal-form";

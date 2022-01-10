@@ -1,0 +1,10 @@
+.header {
+  border-bottom: 1px solid #ececec;
+}
+.header__container {
+  @extend .container;
+  @include centeredFlex();
+}
+.header__nav {
+  @include centeredFlex();
+}

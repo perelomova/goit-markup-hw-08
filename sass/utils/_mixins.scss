@@ -1,0 +1,11 @@
+@mixin font($font-weight: 400, $font-size: 16px) {
+  font-weight: $font-weight;
+  font-size: $font-size;
+}
+@mixin centeredFlex($type: flex) {
+  display: $type;
+  align-items: center;
+}
+@mixin transition($property: fill) {
+  transition: $property 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}

@@ -1,0 +1,29 @@
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+
+  &--nopadding {
+    @extend .section;
+    padding-top: 0;
+  }
+
+  &--withbg {
+    @extend .section;
+    background-color: $accent-bgcolor;
+  }
+}
+.section__title {
+  @include font(700, 36px);
+  line-height: 1.17;
+  text-align: center;
+  margin-bottom: 50px;
+
+  &--hidden {
+    display: none;
+  }
+
+  &--shadow {
+    @extend .section__title;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+}

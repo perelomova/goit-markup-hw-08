@@ -1,0 +1,23 @@
+.logo {
+  @extend %link;
+  display: inline-block;
+  color: $accent-color;
+  font-family: $secondary-font;
+  @include font(700, 26px);
+  line-height: 1.19;
+  padding-top: 24px;
+  padding-bottom: 25px;
+  margin-right: 93px;
+}
+.logo__span {
+  color: #000000;
+
+  &--white {
+    color: $white-color;
+  }
+}
+.footer__logo {
+  @extend .logo;
+  padding: 0;
+  margin: 0 0 20px;
+}

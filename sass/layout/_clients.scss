@@ -1,0 +1,29 @@
+.clients {
+  @extend %list;
+  display: flex;
+  justify-content: space-between;
+}
+.clients__link {
+  @include centeredFlex();
+  justify-content: center;
+  width: 170px;
+  height: 92px;
+  border: 1px solid $gray-link-color;
+  border-radius: 4px;
+  color: $gray-link-color;
+  @include transition(border-color);
+
+  &:hover,
+  &:focus {
+    border-color: $accent-color;
+  }
+}
+.clients__icon {
+  fill: currentColor;
+  @include transition();
+
+  .clients__link:hover &,
+  .clients__link:focus & {
+    fill: $accent-color;
+  }
+}

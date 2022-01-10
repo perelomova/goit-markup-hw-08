@@ -1,0 +1,29 @@
+.features {
+  @extend %list;
+  display: flex;
+  margin-left: calc(-1 * #{$cards-gap});
+}
+.features__item {
+  flex-basis: calc(100% / 4 - #{$cards-gap});
+  margin-left: $cards-gap;
+}
+.features__icon {
+  @include centeredFlex();
+  justify-content: center;
+  height: 120px;
+  background-color: $accent-bgcolor;
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+.features__title {
+  text-transform: uppercase;
+  @include font(700, 14px);
+  line-height: 1.14;
+  margin-bottom: 10px;
+}
+.features__text {
+  color: $light-gray-color;
+  @include font($font-size: 14px);
+  line-height: 1.71;
+  margin-top: 0;
+}
