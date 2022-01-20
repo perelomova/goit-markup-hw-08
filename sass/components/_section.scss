@@ -2,9 +2,18 @@
   padding-top: 94px;
   padding-bottom: 94px;
 
+  @media screen and (max-width: $desktop) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
   &--nopadding {
     @extend .section;
     padding-top: 0;
+
+    @media screen and (max-width: $desktop) {
+      display: none;
+    }
   }
 
   &--withbg {
@@ -17,6 +26,11 @@
   line-height: 1.17;
   text-align: center;
   margin-bottom: 50px;
+
+  @media screen and (max-width: $desktop) {
+    margin-bottom: 30px;
+    font-size: 28px;
+  }
 
   &--hidden {
     display: none;
