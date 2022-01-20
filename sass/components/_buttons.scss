@@ -20,6 +20,49 @@
   vertical-align: middle;
   fill: $white-color;
 }
+.menu-btn {
+  @include centeredFlex(inline-flex);
+  margin-left: auto;
+  border: none;
+  background-color: transparent;
+  z-index: 99;
+
+  &--is-open {
+    right: 0;
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}
+.icon-cross {
+  display: none;
+  fill: $primary-color;
+  @include transition();
+
+  .menu-btn--is-open & {
+    display: block;
+  }
+
+  .menu-btn:hover &,
+  .menu-btn:focus & {
+    fill: $accent-color;
+  }
+}
+.icon-menu {
+  display: block;
+  fill: $primary-color;
+  @include transition();
+
+  .menu-btn--is-open & {
+    display: none;
+  }
+
+  .menu-btn:hover &,
+  .menu-btn:focus & {
+    fill: $accent-color;
+  }
+}
 
 // Modal-form submit button
 .btn--flex {
