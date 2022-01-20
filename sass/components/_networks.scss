@@ -2,6 +2,8 @@
   @extend %list;
   display: flex;
   justify-content: space-between;
+  width: 206px;
+  margin: 0 auto;
 }
 .networks__item {
   border-radius: 50%;
@@ -38,5 +40,45 @@
   .networks__link:hover &,
   .networks__link:focus & {
     fill: $white-color;
+  }
+}
+
+// Menu networks
+.menu-networks {
+  @extend %list;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 48px;
+
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}
+.menu-networks__item {
+  &:not(:last-child) {
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: 1px solid rgba(33, 33, 33, 0.2);
+
+    @media screen and (max-width: 479px) {
+      margin-right: 5px;
+      padding-right: 5px;
+    }
+  }
+}
+.menu-networks__link {
+  text-decoration: none;
+  color: $accent-color;
+  @include font(500, 18px);
+  line-height: 1.22;
+
+  @media screen and (max-width: 349px) {
+    font-size: 12px;
+  }
+  @media screen and (min-width: 350px) {
+    font-size: 14px;
+  }
+  @media screen and (min-width: 385px) {
+    font-size: 16px;
   }
 }
