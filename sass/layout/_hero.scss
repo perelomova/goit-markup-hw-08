@@ -1,21 +1,85 @@
 .hero {
   background-color: #c4c4c4;
-  background-image: linear-gradient(
-      to right,
-      rgba(47, 48, 58, 0.4),
-      rgba(47, 48, 58, 0.4)
-    ),
-    url("../images/background-image.jpg");
   border: 1px solid #000000;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 600px;
-  max-width: 1600px;
+  height: auto;
   margin: 0 auto;
   color: $white-color;
   text-align: center;
-  padding: 200px 0;
+  padding: 118px 0;
+
+  // Mobile
+  @media screen and (min-width: 320px) {
+    max-width: 480px;
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url("../images/hero/bg-mobile.jpg");
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          to right,
+          rgba(47, 48, 58, 0.4),
+          rgba(47, 48, 58, 0.4)
+        ),
+        url("../images/hero/bg-mobile@2x.jpg");
+    }
+  }
+
+  @media screen and (min-width: 320px) and (max-width: 388px) {
+    padding: 80px 0;
+  }
+
+  // Tablet
+  @media screen and (min-width: $tablet) {
+    max-width: 768px;
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url("../images/hero/bg-tablet.jpg");
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          to right,
+          rgba(47, 48, 58, 0.4),
+          rgba(47, 48, 58, 0.4)
+        ),
+        url("../images/hero/bg-tablet@2x.jpg");
+    }
+  }
+
+  // Desktop
+  @media screen and (min-width: $desktop) {
+    max-width: 1600px;
+    padding: 200px 0;
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url("../images/hero/bg-desktop.jpg");
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          to right,
+          rgba(47, 48, 58, 0.4),
+          rgba(47, 48, 58, 0.4)
+        ),
+        url("../images/hero/bg-desktop@2x.jpg");
+    }
+  }
 }
 .hero__title {
   @include font(900, 44px);
@@ -24,4 +88,9 @@
   line-height: 1.36;
   margin-top: 0px;
   margin-bottom: 30px;
+
+  @media screen and (max-width: 1199px) {
+    @include font(900, 26px);
+    line-height: 1.61;
+  }
 }

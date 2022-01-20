@@ -1,9 +1,26 @@
 .header {
   border-bottom: 1px solid #ececec;
+  &.is-open {
+    @media screen and (max-width: 767px) {
+      border: none;
+    }
+  }
 }
 .header__container {
   @extend .container;
   @include centeredFlex();
+  justify-content: space-between;
+  position: relative;
+
+  @media screen and (max-width: 767px) {
+    height: 60px;
+  }
+
+  &.is-open {
+    @media screen and (max-width: 767px) {
+      height: 48px;
+    }
+  }
 }
 .header__nav {
   @include centeredFlex();

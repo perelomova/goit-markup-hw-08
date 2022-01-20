@@ -5,13 +5,35 @@
 }
 .footer__container {
   @extend .container;
-  display: flex;
-  align-items: baseline;
+  align-items: center;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    align-items: baseline;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 76px;
+    padding-right: 89px;
+  }
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 // Address
 .footer__address {
-  margin-right: 70px;
+  text-align: center;
+  margin-bottom: 60px;
+
+  @media screen and (min-width: $desktop) {
+    margin-right: 70px;
+    text-align: left;
+    margin-bottom: 0;
+  }
 }
 .address {
   font-size: 14px;
@@ -31,7 +53,20 @@
   flex-direction: column;
   align-content: space-between;
   width: 206px;
-  margin-right: 93px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 60px;
+
+  @media screen and (min-width: $tablet) {
+    align-content: flex-end;
+    margin: 0;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-right: 93px;
+    text-align: left;
+    margin-bottom: 0;
+  }
 }
 .appeal-container__title {
   display: inline-block;
