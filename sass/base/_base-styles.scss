@@ -4,7 +4,18 @@ body {
   font-family: $primary-font;
   @include font();
   letter-spacing: 0.03em;
+
+  &.modal-open {
+    overflow: hidden;
+  }
+
+  &.is-open {
+    @media screen and (max-width: 767px) {
+      overflow: hidden;
+    }
+  }
 }
+
 h2,
 h3,
 ul,
@@ -12,13 +23,23 @@ p {
   margin: 0;
   padding: 0;
 }
+
 img {
   display: block;
   max-width: 100%;
-  height: auto;
 }
+
 .container {
-  width: 1200px;
   padding: 0 15px;
   margin: 0 auto;
+
+  @media screen and (min-width: $mobile) {
+    width: 480px;
+  }
+  @media screen and (min-width: $tablet) {
+    width: 768px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 1200px;
+  }
 }
