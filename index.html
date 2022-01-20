@@ -20,54 +20,94 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./css/main.min.css" />
-  
   </head>
 
-  <body>
+  <body data-menu-body>
     <!--Header section-->
-    <header class="header">
+    <header class="header" data-menu-header>
       <div class="header__container container">
-        <!--Navbar-->
-        <nav class="header__nav">
-          <a class="logo" href="./index.html" lang="en"
+        <!-- Logo -->
+        <a class="logo" href="./index.html" lang="en" data-menu-logo
             >Web<span class="logo__span">Studio</span></a
           >
+        <!-- menu-btn--is-open -->
+          <button type="button" class="menu-btn" aria-expanded="false" aria-controls="menu-container" data-menu-button>
+            <svg width="40" height="40" aria-label="Переключатель мобильного меню">
+              <use class="icon-cross" href="./images/icons.svg#icon-cross"></use>
+              <use class="icon-menu" href="./images/icons.svg#icon-menu"></use>
+            </svg>
+          </button>
+        
+          <div class="menu-container" id="menu-container" data-menu>
+            <!--Navbar-->
+        <nav class="header__nav">
+            <ul class="site-nav">
+              <li class="site-nav__item">
+                <a class="site-nav__link site-nav__link--current" href="./index.html">Студия</a>
+              </li>
 
-          <ul class="site-nav">
-            <li class="site-nav__item">
-              <a class="site-nav__link site-nav__link--current" href="./index.html">Студия</a>
+              <li class="site-nav__item">
+                <a class="site-nav__link" href="./portfolio.html">Портфолио</a>
+              </li>
+
+              <li class="site-nav__item">
+                <a class="site-nav__link" href="">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+          <!--Header contacts-->
+          <ul class="contacts">
+            <li class="contacts__item">
+              <a class="contacts__link" href="mailto:info@devstudio.com">
+                <svg class="contacts__icon" width="16" height="12">
+                  <use href="./images/icons.svg#icon-envelope"></use>
+                </svg>
+                info@devstudio.com
+              </a>
             </li>
 
-            <li class="site-nav__item">
-              <a class="site-nav__link" href="./portfolio.html">Портфолио</a>
+            <li class="contacts__item">
+              <a class="contacts__link contacts__link--accent" href="tel:+380961111111">
+                <svg class="contacts__icon" width="10" height="16">
+                  <use href="./images/icons.svg#icon-smartphone"></use>
+                </svg>
+                +38 096 111 11 11</a
+              >
             </li>
-
-            <li class="site-nav__item">
-              <a class="site-nav__link" href="">Контакты</a>
-            </li>
-          </ul>
-        </nav>
-        <!--Header contacts-->
-        <ul class="contacts">
-          <li class="contacts__item">
-            <a class="contacts__link" href="mailto:info@devstudio.com">
-              <svg class="contacts__icon" width="16" height="12">
-                <use href="./images/icons.svg#icon-envelope"></use>
-              </svg>
-              info@devstudio.com
-            </a>
-          </li>
-
-          <li class="contacts__item">
-            <a class="contacts__link" href="tel:+380961111111">
-              <svg class="contacts__icon" width="10" height="16">
-                <use href="./images/icons.svg#icon-smartphone"></use>
-              </svg>
-              +38 096 111 11 11</a
-            >
-          </li>
-        </ul>
-      </div>
+          </ul>   
+          <!-- Menu networks -->
+          <ul class="menu-networks">
+                  <li class="menu-networks__item">
+                    <a
+                      class="menu-networks__link"
+                      href=""
+                    > Instagram
+                    </a>
+                  </li>
+                  <li class="menu-networks__item">
+                    <a
+                      class="menu-networks__link"
+                      href=""
+                    > Twitter
+                    </a>
+                  </li>
+                  <li class="menu-networks__item">
+                    <a
+                      class="menu-networks__link"
+                      href=""
+                    > Facebook
+                    </a>
+                  </li>
+                  <li class="menu-networks__item">
+                    <a
+                      class="menu-networks__link"
+                      href=""
+                    > Linkedin
+                    </a>
+                  </li>
+                </ul>
+          </div>
+        </div>
     </header>
 
     <!--Main-->
@@ -157,12 +197,15 @@
           <ul class="duties">
             <li class="duties__item">
               <div class="duties__image">
-                <img
-                  src="./images/web_development.jpg"
+                <picture>
+                  <source srcset="./images/duties/development.jpg 1x, ./images/duties/development@2x.jpg 2x"> 
+
+                  <img
+                  src="./images/duties/development.jpg"
                   alt="Десктопные приложения"
-                  width="370"
-                  height="294"
                 />
+                </picture>
+                
                 <div class="duties__meta">
                   <p class="duties__name">Десктопные приложения</p>
                 </div>
@@ -171,12 +214,15 @@
 
             <li class="duties__item">
               <div class="duties__image">
-                <img
-                  src="./images/mobile_application_development.jpg"
+                <picture>
+                  <source srcset="./images/duties/mobapp.jpg 1x, ./images/duties/mobapp@2x.jpg 2x"> 
+
+                  <img
+                  src="./images/duties/mobapp.jpg"
                   alt="Мобильные приложения"
-                  width="370"
-                  height="294"
                 />
+                </picture>
+                
                 <div class="duties__meta">
                   <p class="duties__name">Мобильные приложения</p>
                 </div>
@@ -185,12 +231,15 @@
 
             <li class="duties__item">
               <div class="duties__image">
-                <img
-                  src="./images/ui_design.jpg"
+                <picture>
+                  <source srcset="./images/duties/design.jpg 1x, ./images/duties/design@2x.jpg 2x"> 
+
+                  <img
+                  src="./images/duties/design.jpg"
                   alt="Дизайнерские решения"
-                  width="370"
-                  height="294"
                 />
+                </picture>
+                
                 <div class="duties__meta">
                   <p class="duties__name">Дизайнерские решения</p>
                 </div>
@@ -208,12 +257,18 @@
           <ul class="team">
             <li class="team__item">
               <div class="team-member">
-                <img
-                  src="./images/product_designer.jpg"
+                <picture>
+                  <source media='(min-width: 1200px)' srcset="./images/product/product-desktop.jpg 1x, ./images/product/product-desktop@2x.jpg 2x"> 
+
+                  <source media='(min-width: 768px)' srcset="./images/product/product-tablet.jpg 1x, ./images/product/product-tablet@2x.jpg 2x"> 
+
+                  <source media='(min-width: 320px)' srcset="./images/product/product-mobile.jpg 1x, ./images/product/product-mobile@2x.jpg 2x"> 
+
+                  <img
+                  src="./images/product/product-mobile.jpg"
                   alt="Продуктовый дизайнер"
-                  width="270"
-                  height="260"
                 />
+                </picture>
               </div>
 
               <div class="team-member__meta">
@@ -274,12 +329,18 @@
 
             <li class="team__item">
               <div class="team-member">
-                <img
-                  src="./images/frontend_developer.jpg"
+                <picture>
+                  <source media='(min-width: 1200px)' srcset="./images/frontend/frontend-desktop.jpg 1x, ./images/frontend/frontend-desktop@2x.jpg 2x"> 
+
+                  <source media='(min-width: 768px)' srcset="./images/frontend/frontend-tablet.jpg 1x, ./images/frontend/frontend-tablet@2x.jpg 2x"> 
+
+                  <source media='(min-width: 320px)' srcset="./images/frontend/frontend-mobile.jpg 1x, ./images/frontend/frontend-mobile@2x.jpg 2x"> 
+
+                  <img
+                  src="./images/frontend/frontend-mobile.jpg"
                   alt="Фронтенд разработчик"
-                  width="270"
-                  height="260"
                 />
+                </picture>
               </div>
 
               <div class="team-member__meta">
@@ -340,12 +401,18 @@
 
             <li class="team__item">
               <div class="team-member">
-                <img
-                  src="./images/marketing_specialist.jpg"
+                <picture>
+                  <source media='(min-width: 1200px)' srcset="./images/marketolog/marketing-desktop.jpg 1x, ./images/marketolog/marketing-desktop@2x.jpg 2x"> 
+
+                  <source media='(min-width: 768px)' srcset="./images/marketolog/marketing-tablet.jpg 1x, ./images/marketolog/marketing-tablet@2x.jpg 2x"> 
+
+                  <source media='(min-width: 320px)' srcset="./images/marketolog/marketing-mobile.jpg 1x, ./images/marketolog/marketing-mobile@2x.jpg 2x"> 
+
+                  <img
+                  src="./images/marketolog/marketing-mobile.jpg"
                   alt="Маркетолог"
-                  width="270"
-                  height="260"
                 />
+                </picture>
               </div>
 
               <div class="team-member__meta">
@@ -406,12 +473,18 @@
 
             <li class="team__item">
               <div class="team-member">
-                <img
-                  src="./images/designer.jpg"
+                <picture>
+                  <source media='(min-width: 1200px)' srcset="./images/designer/designer-desktop.jpg 1x, ./images/designer/designer-desktop@2x.jpg 2x"> 
+
+                  <source media='(min-width: 768px)' srcset="./images/designer/designer-tablet.jpg 1x, ./images/designer/designer-tablet@2x.jpg 2x"> 
+
+                  <source media='(min-width: 320px)' srcset="./images/designer/designer-mobile.jpg 1x, ./images/designer/designer-mobile@2x.jpg 2x"> 
+
+                  <img
+                  src="./images/designer/designer-mobile.jpg"
                   alt="Дизайнер"
-                  width="270"
-                  height="260"
                 />
+                </picture>
               </div>
 
               <div class="team-member__meta">
@@ -677,5 +750,6 @@
     </div>
 
     <script src="./js/modal.js"></script>
+    <script src="./js/menu.js"></script>
   </body>
 </html>
