@@ -1,0 +1,27 @@
+.menu-container {
+  @extend .container;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 0 40px 48px;
+
+  @media screen and (max-width: 767px) {
+    display: none;
+    background-color: $white-color;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    &.is-open {
+      display: block;
+      height: 100vh;
+      top: 48px;
+      overflow-y: scroll;
+      z-index: 2;
+    }
+  }
+  @media screen and (min-width: $tablet) {
+    padding: 0;
+  }
+}
