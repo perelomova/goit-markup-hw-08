@@ -22,54 +22,92 @@
     <link rel="stylesheet" href="./css/main.min.css" />
   </head>
 
-  <body>
+  <body data-menu-body>
     <!--Header section-->
-    <header class="header">
+    <header class="header" data-menu-header>
       <div class="header__container container">
-        <!--Navbar-->
-        <nav class="header__nav">
-          <a class="logo" href="./index.html" lang="en"
-            >Web<span class="logo__span">Studio</span></a
+        <!-- Logo -->
+        <a class="logo" href="./index.html" lang="en" data-menu-logo
+          >Web<span class="logo__span">Studio</span></a
+        >
+        <!-- menu-btn--is-open -->
+        <button
+          type="button"
+          class="menu-btn"
+          aria-expanded="false"
+          aria-controls="menu-container"
+          data-menu-button
+        >
+          <svg
+            width="40"
+            height="40"
+            aria-label="Переключатель мобильного меню"
           >
+            <use class="icon-cross" href="./images/icons.svg#icon-cross"></use>
+            <use class="icon-menu" href="./images/icons.svg#icon-menu"></use>
+          </svg>
+        </button>
 
-          <ul class="site-nav">
-            <li class="site-nav__item">
-              <a class="site-nav__link" href="./index.html">Студия</a>
+        <div class="menu-container" id="menu-container" data-menu>
+          <!--Navbar-->
+          <nav class="header__nav">
+            <ul class="site-nav">
+              <li class="site-nav__item">
+                <a class="site-nav__link" href="./index.html">Студия</a>
+              </li>
+
+              <li class="site-nav__item">
+                <a
+                  class="site-nav__link site-nav__link--current"
+                  href="./portfolio.html"
+                  >Портфолио</a
+                >
+              </li>
+
+              <li class="site-nav__item">
+                <a class="site-nav__link" href="">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+          <!--Header contacts-->
+          <ul class="contacts">
+            <li class="contacts__item">
+              <a class="contacts__link" href="mailto:info@devstudio.com">
+                <svg class="contacts__icon" width="16" height="12">
+                  <use href="./images/icons.svg#icon-envelope"></use>
+                </svg>
+                info@devstudio.com
+              </a>
             </li>
 
-            <li class="site-nav__item">
+            <li class="contacts__item">
               <a
-                class="site-nav__link site-nav__link--current"
-                href="./portfolio.html"
-                >Портфолио</a
+                class="contacts__link contacts__link--accent"
+                href="tel:+380961111111"
+              >
+                <svg class="contacts__icon" width="10" height="16">
+                  <use href="./images/icons.svg#icon-smartphone"></use>
+                </svg>
+                +38 096 111 11 11</a
               >
             </li>
-
-            <li class="site-nav__item">
-              <a class="site-nav__link" href="">Контакты</a>
+          </ul>
+          <!-- Menu networks -->
+          <ul class="menu-networks">
+            <li class="menu-networks__item">
+              <a class="menu-networks__link" href=""> Instagram </a>
+            </li>
+            <li class="menu-networks__item">
+              <a class="menu-networks__link" href=""> Twitter </a>
+            </li>
+            <li class="menu-networks__item">
+              <a class="menu-networks__link" href=""> Facebook </a>
+            </li>
+            <li class="menu-networks__item">
+              <a class="menu-networks__link" href=""> Linkedin </a>
             </li>
           </ul>
-        </nav>
-        <!--Header contacts-->
-        <ul class="contacts">
-          <li class="contacts__item">
-            <a class="contacts__link" href="mailto:info@devstudio.com">
-              <svg class="contacts__icon" width="16" height="12">
-                <use href="./images/icons.svg#icon-envelope"></use>
-              </svg>
-              info@devstudio.com
-            </a>
-          </li>
-
-          <li class="contacts__item">
-            <a class="contacts__link" href="tel:+380961111111">
-              <svg class="contacts__icon" width="10" height="16">
-                <use href="./images/icons.svg#icon-smartphone"></use>
-              </svg>
-              +38 096 111 11 11</a
-            >
-          </li>
-        </ul>
+        </div>
       </div>
     </header>
 
@@ -106,12 +144,37 @@
               <a class="card-set__link" href="#">
                 <article class="card">
                   <div class="card__thumb">
-                    <img
-                      src="./images/technokriak.jpg"
-                      alt="Ноутбук, демонстрирующий веб-сайт"
-                      width="370"
-                      height="294"
-                    />
+                    <picture>
+                      <source
+                        media="(min-width: 1200px)"
+                        srcset="
+                          ./images/portfolio/technokriak-desktop.jpg    1x,
+                          ./images/portfolio/technokriak-desktop@2x.jpg 2x
+                        "
+                      />
+
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="
+                          ./images/portfolio/technokriak-tablet.jpg    1x,
+                          ./images/portfolio/technokriak-tablet@2x.jpg 2x
+                        "
+                      />
+
+                      <source
+                        media="(min-width: 320px)"
+                        srcset="
+                          ./images/portfolio/technokriak-mobile.jpg    1x,
+                          ./images/portfolio/technokriak-mobile@2x.jpg 2x
+                        "
+                      />
+
+                      <img
+                        src="./images/portfolio/technokriak-mobile.jpg"
+                        alt="Ноутбук, демонстрирующий веб-сайт"
+                      />
+                    </picture>
+
                     <div class="card__overlay">
                       <p>
                         Технокряк это современная площадка распространения
@@ -134,12 +197,37 @@
               <a class="card-set__link" href="#">
                 <article class="card">
                   <div class="card__thumb">
-                    <img
-                      src="./images/poster.jpg"
-                      alt="Постер с баскетболистами"
-                      width="370"
-                      height="294"
-                    />
+                    <picture>
+                      <source
+                        media="(min-width: 1200px)"
+                        srcset="
+                          ./images/portfolio/poster-desktop.jpg    1x,
+                          ./images/portfolio/poster-desktop@2x.jpg 2x
+                        "
+                      />
+
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="
+                          ./images/portfolio/poster-tablet.jpg    1x,
+                          ./images/portfolio/poster-tablet@2x.jpg 2x
+                        "
+                      />
+
+                      <source
+                        media="(min-width: 320px)"
+                        srcset="
+                          ./images/portfolio/poster-mobile.jpg    1x,
+                          ./images/portfolio/poster-mobile@2x.jpg 2x
+                        "
+                      />
+
+                      <img
+                        src="./images/portfolio/poster-mobile.jpg"
+                        alt="Постер с баскетболистами"
+                      />
+                    </picture>
+
                     <div class="card__overlay">
                       <p>
                         Технокряк это современная площадка распространения
@@ -164,12 +252,37 @@
               <a class="card-set__link" href="#">
                 <article class="card">
                   <div class="card__thumb">
-                    <img
-                      src="./images/seafood_restaurant.jpg"
-                      alt="Эмблема ресторана Seafood"
-                      width="370"
-                      height="294"
-                    />
+                    <picture>
+                      <source
+                        media="(min-width: 1200px)"
+                        srcset="
+                          ./images/portfolio/restaurant-desktop.jpg    1x,
+                          ./images/portfolio/restaurant-desktop@2x.jpg 2x
+                        "
+                      />
+
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="
+                          ./images/portfolio/restaurant-tablet.jpg    1x,
+                          ./images/portfolio/restaurant-tablet@2x.jpg 2x
+                        "
+                      />
+
+                      <source
+                        media="(min-width: 320px)"
+                        srcset="
+                          ./images/portfolio/restaurant-mobile.jpg    1x,
+                          ./images/portfolio/restaurant-mobile@2x.jpg 2x
+                        "
+                      />
+
+                      <img
+                        src="./images/portfolio/restaurant-mobile.jpg"
+                        alt="Эмблема ресторана Seafood"
+                      />
+                    </picture>
+
                     <div class="card__overlay">
                       <p>
                         Технокряк это современная площадка распространения
@@ -192,12 +305,37 @@
               <a class="card-set__link" href="#">
                 <article class="card">
                   <div class="card__thumb">
-                    <img
-                      src="./images/haedphones.jpg"
-                      alt="Мониторные наушники"
-                      width="370"
-                      height="294"
-                    />
+                    <picture>
+                      <source
+                        media="(min-width: 1200px)"
+                        srcset="
+                          ./images/portfolio/headphones-desktop.jpg    1x,
+                          ./images/portfolio/headphones-desktop@2x.jpg 2x
+                        "
+                      />
+
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="
+                          ./images/portfolio/headphones-tablet.jpg    1x,
+                          ./images/portfolio/headphones-tablet@2x.jpg 2x
+                        "
+                      />
+
+                      <source
+                        media="(min-width: 320px)"
+                        srcset="
+                          ./images/portfolio/headphones-mobile.jpg    1x,
+                          ./images/portfolio/headphones-mobile@2x.jpg 2x
+                        "
+                      />
+
+                      <img
+                        src="./images/portfolio/headphones-mobile.jpg"
+                        alt="Мониторные наушники"
+                      />
+                    </picture>
+
                     <div class="card__overlay">
                       <p>
                         Технокряк это современная площадка распространения
@@ -220,12 +358,37 @@
               <a class="card-set__link" href="#">
                 <article class="card">
                   <div class="card__thumb">
-                    <img
-                      src="./images/boxes.jpg"
-                      alt="Сет из коробок"
-                      width="370"
-                      height="294"
-                    />
+                    <picture>
+                      <source
+                        media="(min-width: 1200px)"
+                        srcset="
+                          ./images/portfolio/boxes-desktop.jpg    1x,
+                          ./images/portfolio/boxes-desktop@2x.jpg 2x
+                        "
+                      />
+
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="
+                          ./images/portfolio/boxes-tablet.jpg    1x,
+                          ./images/portfolio/boxes-tablet@2x.jpg 2x
+                        "
+                      />
+
+                      <source
+                        media="(min-width: 320px)"
+                        srcset="
+                          ./images/portfolio/boxes-mobile.jpg    1x,
+                          ./images/portfolio/boxes-mobile@2x.jpg 2x
+                        "
+                      />
+
+                      <img
+                        src="./images/portfolio/boxes-mobile.jpg"
+                        alt="Сет из коробок"
+                      />
+                    </picture>
+
                     <div class="card__overlay">
                       <p>
                         Технокряк это современная площадка распространения
@@ -248,12 +411,37 @@
               <a class="card-set__link" href="#">
                 <article class="card">
                   <div class="card__thumb">
-                    <img
-                      src="./images/display.jpg"
-                      alt="Беспроводной монитор Apple"
-                      width="370"
-                      height="294"
-                    />
+                    <picture>
+                      <source
+                        media="(min-width: 1200px)"
+                        srcset="
+                          ./images/portfolio/monitor-desktop.jpg    1x,
+                          ./images/portfolio/monitor-desktop@2x.jpg 2x
+                        "
+                      />
+
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="
+                          ./images/portfolio/monitor-tablet.jpg    1x,
+                          ./images/portfolio/monitor-tablet@2x.jpg 2x
+                        "
+                      />
+
+                      <source
+                        media="(min-width: 320px)"
+                        srcset="
+                          ./images/portfolio/monitor-mobile.jpg    1x,
+                          ./images/portfolio/monitor-mobile@2x.jpg 2x
+                        "
+                      />
+
+                      <img
+                        src="./images/portfolio/monitor-mobile.jpg"
+                        alt="Беспроводной монитор Apple"
+                      />
+                    </picture>
+
                     <div class="card__overlay">
                       <p>
                         Технокряк это современная площадка распространения
@@ -278,12 +466,37 @@
               <a class="card-set__link" href="#">
                 <article class="card">
                   <div class="card__thumb">
-                    <img
-                      src="./images/magazine.jpg"
-                      alt="Страницы журнала"
-                      width="370"
-                      height="294"
-                    />
+                    <picture>
+                      <source
+                        media="(min-width: 1200px)"
+                        srcset="
+                          ./images/portfolio/magazine-desktop.jpg    1x,
+                          ./images/portfolio/magazine-desktop@2x.jpg 2x
+                        "
+                      />
+
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="
+                          ./images/portfolio/magazine-tablet.jpg    1x,
+                          ./images/portfolio/magazine-tablet@2x.jpg 2x
+                        "
+                      />
+
+                      <source
+                        media="(min-width: 320px)"
+                        srcset="
+                          ./images/portfolio/magazine-mobile.jpg    1x,
+                          ./images/portfolio/magazine-mobile@2x.jpg 2x
+                        "
+                      />
+
+                      <img
+                        src="./images/portfolio/magazine-mobile.jpg"
+                        alt="Страницы журнала"
+                      />
+                    </picture>
+
                     <div class="card__overlay">
                       <p>
                         Технокряк это современная площадка распространения
@@ -306,12 +519,37 @@
               <a class="card-set__link" href="#">
                 <article class="card">
                   <div class="card__thumb">
-                    <img
-                      src="./images/label.jpg"
-                      alt="Этикетка Label tag"
-                      width="370"
-                      height="294"
-                    />
+                    <picture>
+                      <source
+                        media="(min-width: 1200px)"
+                        srcset="
+                          ./images/portfolio/label-desktop.jpg    1x,
+                          ./images/portfolio/label-desktop@2x.jpg 2x
+                        "
+                      />
+
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="
+                          ./images/portfolio/label-tablet.jpg    1x,
+                          ./images/portfolio/label-tablet@2x.jpg 2x
+                        "
+                      />
+
+                      <source
+                        media="(min-width: 320px)"
+                        srcset="
+                          ./images/portfolio/label-mobile.jpg    1x,
+                          ./images/portfolio/label-mobile@2x.jpg 2x
+                        "
+                      />
+
+                      <img
+                        src="./images/portfolio/label-mobile.jpg"
+                        alt="Этикетка Label tag"
+                      />
+                    </picture>
+
                     <div class="card__overlay">
                       <p>
                         Технокряк это современная площадка распространения
@@ -334,12 +572,37 @@
               <a class="card-set__link" href="#">
                 <article class="card">
                   <div class="card__thumb">
-                    <img
-                      src="./images/laptop.jpg"
-                      alt="Ноутбук, демонстрирующий веб-сайт Growing Business"
-                      width="370"
-                      height="294"
-                    />
+                    <picture>
+                      <source
+                        media="(min-width: 1200px)"
+                        srcset="
+                          ./images/portfolio/hands-desktop.jpg    1x,
+                          ./images/portfolio/hands-desktop@2x.jpg 2x
+                        "
+                      />
+
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="
+                          ./images/portfolio/hands-tablet.jpg    1x,
+                          ./images/portfolio/hands-tablet@2x.jpg 2x
+                        "
+                      />
+
+                      <source
+                        media="(min-width: 320px)"
+                        srcset="
+                          ./images/portfolio/hands-mobile.jpg    1x,
+                          ./images/portfolio/hands-mobile@2x.jpg 2x
+                        "
+                      />
+
+                      <img
+                        src="./images/portfolio/hands-mobile.jpg"
+                        alt="Ноутбук, демонстрирующий веб-сайт Growing Business"
+                      />
+                    </picture>
+
                     <div class="card__overlay">
                       <p>
                         Технокряк это современная площадка распространения
@@ -444,5 +707,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/menu.js"></script>
   </body>
 </html>
