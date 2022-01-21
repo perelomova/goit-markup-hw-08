@@ -20,7 +20,6 @@
   @extend %link;
   @include centeredFlex();
   color: $light-gray-color;
-  padding: 0 0 32px 0;
   font-size: 24px;
 
   &--accent {
@@ -44,6 +43,12 @@
 .contacts__item {
   @include centeredFlex();
   margin-left: 0;
+
+  @media screen and (max-width: 767px) {
+    &:last-child {
+      margin-bottom: 32px;
+    }
+  }
 
   @media screen and (min-width: $tablet) and (max-width: 1199px) {
     &:first-child {
